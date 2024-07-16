@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    
+    </style>
+
+
+
+<div class="main2">
+    
+    <div class="main1">
+        <div class="roomhead">
+
+            <div class="roomnameinroom">
+                
+                {{room.name}}
+            </div>
+            <div class="roomdes">
+                
+                {{room.description}}
+            </div>
+        </div>
+        <hr>
+        <div class="msgbody">
+            
+            {% for msg in msgs %}
+            {% if msg.user.username == request.user.username %}
+            <div class="msg-box alignright">
+                <div class="user">{{msg.user}}</div>
+                {{msg.body}} 
+                <div class="date">{{msg.created|timesince}} ago</div>
+                <small><a class="btn btn-danger" href="{% url 'deletemsg' msg.id %}" role="button">Delete</a></small>
+                
+            </div>
+            {% else %}
+            <div class="msg-box">
+                <div class="user">{{msg.user}}</div>
+                {{msg.body}}
+                <div class="date">{{msg.created|timesince}} ago</div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% if request.user.is_authenticated %}
+            <div class="post">
+                <form action="" method="POST" >
+                    {% csrf_token %}
+                    <div style="display: flex; gap:1rem;">
+
+                        <input class="form-control mb-2" type="text" placeholder="message" name="msg"/>
+                        <input class="btn btn-primary mb-2" type="submit" value="post"/>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="participants" >
+        <div class="partname">Participants</div>
+        <hr>
+        {% for user in participants %}
+        
+        <div class="partuser"><a style="text-decoration: none;
+                      color: rgb(255, 255, 255);" href="{% url 'profile' user.id %}">@{{user.username}}</a></div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

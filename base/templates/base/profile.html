@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+{% load static %}
+<style>
+
+
+.hiddenbtns
+{
+
+    display: none;
+    width:fit-content;
+    margin:1rem auto;
+}
+@media only screen and (max-width: 780px) 
+{
+    .browsemain,.activitymain
+    {
+        display: none;
+    }
+    .main{
+
+        grid-template-columns: 1fr;
+    }
+
+    .hiddenbtns
+    {
+        display: block;
+    }
+
+}
+</style>
+
+<div class="profilemain ">
+
+    <h2 class="profileusername" >{{user.username}}</h2>
+    <div class="hiddenbtns">
+        <a href="{% url 'browsetopics' %}" class="btn btn-secondary secretbtn btn-lg active" role="button" aria-pressed="true">
+            <img width="30rem"  src="{% static 'images/browse.svg' %}" alt="browse">Browse Topics
+        </a>
+        <a href="{% url 'useractivity' user.id %}" class="btn btn-secondary btn-lg secretbtn active" role="button" aria-pressed="true">
+            <img width="30rem"  src="{% static 'images/act.svg' %}" alt="act">Activity 
+        </a>
+    </div>
+    <div class="main">
+
+      
+            
+        {% include 'base/browsetopics.html' %}
+
+        {% include 'base/allrooms.html' %}
+
+        {% include 'base/activity.html' %}
+
+
+    </div>
+
+</div>
+
+
+{% endblock content %}

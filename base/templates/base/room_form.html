@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<form method="POST" class="createroomform" >
+
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="formGroupExampleInput">Room Name</label>
+        <input name="name" type="text" value="{{room.name}}" class="form-control" id="formGroupExampleInput">
+      </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Topic</label>
+        <input name="topic" value="{{room.topic}}" required type="text" list="topic-list" class="form-control">
+        <datalist id="topic-list">
+            <select id="room-topic">
+                {% for topic in topics%}
+                <option value="{{topic.name}}">{{topic.name}}</option>
+                {% endfor %}
+
+            </select>
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea name="description"  class="form-control" id="exampleFormControlTextarea1" rows="3">{{room.description}}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Is_private</label>
+        <input name="private" type="text" value="{{room.private}}" class="form-control" id="formGroupExampleInput" placeholder="yes/no">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Password</label>
+        <input name="password" value="{{room.password}}" type="password" class="form-control" id="formGroupExampleInput" >
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="create/update" class="btn btn-primary">
+      </div>
+
+
+
+    
+</form>
+
+
+
+{% endblock %}

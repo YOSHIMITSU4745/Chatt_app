@@ -1,0 +1,34 @@
+
+
+
+<div class="rooms">
+    <div>
+       <h6>{{rc}} search matches</h6>
+    </div>   
+    <hr>
+   {% for room in rooms %}
+   <div class="roompanel">
+       <span><a style="text-decoration: none; color: black;" href="{% url 'profile' room.host.id %}">@{{room.host.username}}</a></span>
+       <h5>
+           {% if room.private != 'yes' or room.host == request.user or request.user in room.participants.all %}
+           <a href="{% url 'room' room.id %} " style="text-decoration: none; color: black;">
+               {{room.name}}
+           </a>
+           {% else %}
+           <a href="{% url 'roomcode' room.id %}" style="text-decoration: none; color: black;" >
+               {{room.name}}
+           </a>
+           {% endif %}
+       </h5>
+       <small>{{room.topic.name}}</small>
+       {% if request.user == room.host %}
+       <div>
+
+           <small><a class="btn btn-success" href="{% url 'updateroom' room.id %}" role="button">Update</a></small>
+           <small><a class="btn btn-danger" href="{% url 'deleteroom' room.id %}" role="button">Delete</a></small>
+        </div>
+       {% endif %}
+       <hr>
+   </div>
+   {% endfor %}
+</div>

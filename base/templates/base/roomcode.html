@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<form action="" method="POST" class="roomcodeform" >
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="formGroupExampleInput" style="margin-bottom: 1rem;">Enter Room Code:</label>
+        <input type="text" name="paswd" class="form-control" id="formGroupExampleInput" placeholder="room code">
+      </div>
+    <div style="display: flex;">
+
+        <input style="margin-left: 1rem; margin-right: 1rem;" type="submit" class="btn btn-primary mb-2" value="Enter room">
+        <a class="btn btn-primary mb-2" href="/">Go Back</a>
+    </div>  
+</form>
+
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+
+
+<div class="activitymain" >
+
+    <div class="activityhead" >
+        Activity corner 
+        {% if usr %}
+        <div class="usr"><a class="txt" href="{% url 'profile' user.id %}">@{{usr.username}}</a></div>
+        {% endif %}
+    </div>
+    <div class="activity">
+        {% for r in pr %}
+        <div class="main-box">
+            <small class="user"><a style="text-decoration: none; color: black;" href="{% url 'profile' r.user.id %}">@{{r.user}}</a></small>
+            <small>{{r.created|timesince}} ago</small>
+            <div class="roomname">{{r.room}}</div>
+            <div class="msg-box">
+                {{r.body}}
+                
+            </div>
+            {% if r.user == request.user %}
+            <small><a class="btn btn-danger" href="{% url 'deletemsg' r.id %}" role="button">Delete</a></small>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+        
+    </div>
+</div>

@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+
+
+.secretbtn
+    {
+        display: none;
+    }
+
+
+@media only screen and (max-width: 780px) 
+{
+    .browsemain,.activitymain
+    {
+        display: none;
+    }
+    .home-container{
+
+        grid-template-columns: 1fr;
+    }
+
+    .secretbtn
+    {
+        display: block;
+    }
+
+}
+</style>
+
+
+<div>
+
+    <div class="head">
+        
+        <a href="{% url 'createroom' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+            <img width="30rem"  src="{% static 'images/create.svg' %}" alt="create"> Create Room
+        </a>
+        <a href="{% url 'browsetopics' %}" class="btn btn-secondary secretbtn btn-lg active" role="button" aria-pressed="true">
+            <img width="30rem"  src="{% static 'images/browse.svg' %}" alt="browse">Browse Topics
+        </a>
+        <a href="{% url 'activity' %}" class="btn btn-secondary btn-lg secretbtn active" role="button" aria-pressed="true">
+            <img width="30rem"  src="{% static 'images/act.svg' %}" alt="act">Activity 
+        </a>
+    </div>
+    <div class="home-container">
+        
+        {% include 'base/browsetopics.html' %}
+        <div class="allrooms">
+
+            {% include 'base/allrooms.html' %}
+        </div>
+        
+        {% include 'base/activity.html' %}
+        
+        
+        
+    </div>
+</div>
+{% endblock %}
+

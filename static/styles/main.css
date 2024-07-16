@@ -1,0 +1,371 @@
+
+/* home */
+.home-container
+        {
+            display: grid;
+            grid-template-columns: 1.5fr 3fr 1.5fr;
+    
+        }
+
+    .head
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        width:fit-content;
+        margin:2rem auto;
+        /* margin-top:8rem; */
+        
+        
+    }    
+    
+
+    .allrooms
+    {
+        margin-right: 1rem;
+    }
+    
+
+
+
+/* navbar */
+
+.navbar
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    
+}
+
+.navbar-brand
+{
+
+    margin-right: 2rem;
+}
+
+.weluser
+{
+    text-decoration: none; 
+    color:white;
+    font-size:1.2rem ;
+}
+
+/* browsetopics */
+
+
+.browsemain
+{
+
+    padding: 1rem;
+border: solid gray 0.05rem;
+border-radius: 2rem;
+margin-right: 1rem;
+z-index: 3;
+
+
+
+}
+
+.browsetopichead
+{
+               padding: 1rem;
+                background-color: rgb(238, 231, 222);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+
+}
+
+
+/* delete */
+
+.deleteform
+{
+
+  width: 75%;
+margin: 0 auto;
+ padding: 1rem;
+  border: solid black 0.1rem;
+  box-shadow: 10px 15px 15px rgba(0,0,0,0.25);
+  border-radius: 1rem;
+  background-color: antiquewhite;
+  margin-top:8rem;
+
+
+}
+
+/* allrooms */
+
+.roompanel
+{
+    padding: 0.1rem 0.5rem;
+               box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+               border-radius: 2rem; 
+               margin-bottom: 1rem;
+               background-color: rgb(249, 240, 229);
+}
+
+
+
+/* profile */
+
+.main{
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+   
+}
+.profileusername
+{
+    
+    margin: 0 auto;
+            text-align: center;
+            padding: 1rem 0rem;
+            width:65%;
+            border-radius: 2rem;
+            background-color: rgb(255, 253, 237);
+
+}
+
+.margintop
+{
+    margin-top: 8rem;
+}
+
+/* create room */
+
+.form-group
+    {
+        margin-top: 1rem;
+    }
+
+    .createroomform
+    {
+
+          width: 75%;
+        margin: 0 auto;
+      padding: 1rem;
+      border: solid black 0.1rem;
+      box-shadow: 10px 15px 15px rgba(0,0,0,0.25);
+      border-radius:2rem;
+      background-color: antiquewhite;
+    }
+
+
+
+
+/* inside room     */
+
+.msg-box{
+    padding:1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: beige;
+    width:fit-content;
+    max-width: 75%;
+    border-radius: 2rem;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.alignright
+{
+    margin-left: auto;
+}
+
+.user{
+
+    font-weight: 500;
+    font-style: italic;
+}
+
+.msgbody
+{
+    width:100%;
+}
+
+.date
+{
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.main2{
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.participants
+{
+    padding: 1rem;
+    border: solid gray 0.05rem;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    min-height: 40rem;
+    margin-left: 1rem;
+
+}
+
+.post
+{
+    width: fit-content;
+    margin-left: auto;
+}
+
+.roomnameinroom
+{
+    padding:1rem;
+    background-color: rgb(159, 134, 83);
+    border-radius: 2rem 2rem 0 0;
+    font-size: 2.5rem;
+    color: rgb(55, 55, 55);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.roomhead
+{
+    background-color: rgb(255, 255, 244);
+    border-radius: 2rem ;
+}
+
+.roomdes
+{
+
+    font-size: 1.2rem;
+    color: rgb(29, 29, 29);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.partname
+{
+    padding:1rem;
+    background-color: rgb(226, 211, 185);
+    border-radius: 2rem 2rem 0 0;
+    font-size: 1.8rem;
+}
+
+.partuser
+{
+    padding: .5rem;
+    border-radius: 1rem;
+    background-color: rgb(149, 123, 88);
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+/* room code */
+
+.form-group
+{
+    margin: 1rem;
+}
+
+.roomcodeform
+{
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
+    border: solid black 0.1rem;
+    box-shadow: 10px 15px 15px rgba(0,0,0,0.25);
+    border-radius: 1rem;
+    background-color: antiquewhite;
+}
+
+
+/* user_login */
+
+.userloginform
+{
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
+    border: solid black 0.1rem;
+    box-shadow: 10px 15px 15px rgba(0,0,0,0.25);
+    border-radius: 1rem;
+    background-color: antiquewhite;
+}
+
+
+/* activity_corner */
+
+
+.roomname{
+        
+    font-style: italic;
+    font-weight: 500;
+}
+
+.user
+{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.msg-box{
+    padding:1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: beige;
+    width:fit-content;
+    max-width: 75%;
+    border-radius: 2rem;
+    box-shadow: 5px 2.5px 2.5px rgba(0, 0, 0, 0.5);
+}
+
+.activity
+{
+    max-height:725px ;
+    
+    overflow: auto;
+}
+.main-box
+{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border: solid gray 0.05rem;
+}
+
+.activitymain
+{
+        padding: 1rem;
+        border: solid gray 0.05rem;
+        border-radius: 2rem;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+        z-index: 3;
+        height: fit-content;
+
+}
+.activityhead
+{
+            padding: 1rem;
+            background-color: rgb(255, 249, 241);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            display: flex;
+            font-weight: 500;
+            font-size: 2rem;
+            
+
+}
+
+.usr{
+
+    padding: 0.2rem 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgb(250, 215, 171);
+    margin: auto 0;
+    margin-left: 0.5rem;
+    
+}
+
+.txt
+{
+    text-decoration: none;
+    color:rgb(72, 72, 72)
+
+}
